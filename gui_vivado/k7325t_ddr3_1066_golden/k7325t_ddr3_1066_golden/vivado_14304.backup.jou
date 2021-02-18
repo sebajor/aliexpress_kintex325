@@ -1,0 +1,47 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Tue Sep  8 20:10:40 2020
+# Process ID: 14304
+# Current directory: C:/Users/briansuneZ/AppData/Roaming/Xilinx/Vivado
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent7620
+# Log file: C:/Users/briansuneZ/AppData/Roaming/Xilinx/Vivado/vivado.log
+# Journal file: C:/Users/briansuneZ/AppData/Roaming/Xilinx/Vivado\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project G:/Xilinx_K7_325t/k7325t_ddr3_1600_golden/k7325t_ddr3_1600_golden.xpr
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files G:/Xilinx_K7_325t/k7325t_ddr3_1600_golden/k7325t_ddr3_1600_golden.srcs/constrs_1/new/k7325t_ddr3.xdc] -no_script -reset -force -quiet
+remove_files  -fileset constrs_1 G:/Xilinx_K7_325t/k7325t_ddr3_1600_golden/k7325t_ddr3_1600_golden.srcs/constrs_1/new/k7325t_ddr3.xdc
+update_compile_order -fileset sources_1
+add_files -fileset constrs_1 -norecurse G:/Xilinx_K7_325t/k7325t_ddr3_1600_golden/k7325t_ddr3_1600_golden.srcs/constrs_1/new/k7325t_ddr3_1600_golden.xdc
+set_property target_constrs_file G:/Xilinx_K7_325t/k7325t_ddr3_1600_golden/k7325t_ddr3_1600_golden.srcs/constrs_1/new/k7325t_ddr3_1600_golden.xdc [current_fileset -constrset]
+export_ip_user_files -of_objects  [get_files G:/Xilinx_K7_325t/k7325t_ddr3_1600_golden/k7325t_ddr3_1600_golden.srcs/sources_1/user/top.v] -no_script -reset -force -quiet
+remove_files  G:/Xilinx_K7_325t/k7325t_ddr3_1600_golden/k7325t_ddr3_1600_golden.srcs/sources_1/user/top.v
+add_files -norecurse G:/Xilinx_K7_325t/k7325t_ddr3_1600_golden/k7325t_ddr3_1600_golden.srcs/sources_1/user/k7325t_ddr3_1600_golden.v
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+archive_project G:/Xilinx_K7_325t/k7325t_ddr3_1600_golden.xpr.zip -temp_dir C:/Users/briansuneZ/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-14304-DESKTOP-4UKJC18 -force -exclude_run_results
+close_project
+open_project G:/Xilinx_K7_325t/k7325t_ddr3_1066_golden/k7325t_ddr3_1066_golden.xpr
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files G:/Xilinx_K7_325t/k7325t_ddr3_1066_golden/k7325t_ddr3_1066_golden.srcs/sources_1/ip/ddr_pll/ddr_pll.xci] -no_script -reset -force -quiet
+remove_files  -fileset ddr_pll G:/Xilinx_K7_325t/k7325t_ddr3_1066_golden/k7325t_ddr3_1066_golden.srcs/sources_1/ip/ddr_pll/ddr_pll.xci
+file delete -force G:/Xilinx_K7_325t/k7325t_ddr3_1066_golden/k7325t_ddr3_1066_golden.srcs/sources_1/ip/ddr_pll
+export_ip_user_files -of_objects  [get_files G:/Xilinx_K7_325t/k7325t_ddr3_1066_golden/k7325t_ddr3_1066_golden.srcs/sources_1/ip/ddr_se/ddr_se.xci] -no_script -reset -force -quiet
+remove_files  -fileset ddr_se G:/Xilinx_K7_325t/k7325t_ddr3_1066_golden/k7325t_ddr3_1066_golden.srcs/sources_1/ip/ddr_se/ddr_se.xci
+file delete -force G:/Xilinx_K7_325t/k7325t_ddr3_1066_golden/k7325t_ddr3_1066_golden.srcs/sources_1/ip/ddr_se
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files G:/Xilinx_K7_325t/k7325t_ddr3_1066_golden/k7325t_ddr3_1066_golden.srcs/constrs_1/new/k7325t_ddr3.xdc] -no_script -reset -force -quiet
+remove_files  -fileset constrs_1 G:/Xilinx_K7_325t/k7325t_ddr3_1066_golden/k7325t_ddr3_1066_golden.srcs/constrs_1/new/k7325t_ddr3.xdc
+export_ip_user_files -of_objects  [get_files G:/Xilinx_K7_325t/k7325t_ddr3_1066_golden/k7325t_ddr3_1066_golden.srcs/sources_1/ip/ddr_se/mig_b.prj] -no_script -reset -force -quiet
+remove_files  G:/Xilinx_K7_325t/k7325t_ddr3_1066_golden/k7325t_ddr3_1066_golden.srcs/sources_1/ip/ddr_se/mig_b.prj
+export_ip_user_files -of_objects  [get_files G:/Xilinx_K7_325t/k7325t_ddr3_1066_golden/k7325t_ddr3_1066_golden.srcs/sources_1/user/top.v] -no_script -reset -force -quiet
+remove_files  G:/Xilinx_K7_325t/k7325t_ddr3_1066_golden/k7325t_ddr3_1066_golden.srcs/sources_1/user/top.v
+add_files -norecurse G:/Xilinx_K7_325t/k7325t_ddr3_1066_golden/k7325t_ddr3_1066_golden.srcs/sources_1/user/k7325t_ddr3_1066_golden.v
+update_compile_order -fileset sources_1
+add_files -fileset constrs_1 -norecurse G:/Xilinx_K7_325t/k7325t_ddr3_1066_golden/k7325t_ddr3_1066_golden.srcs/constrs_1/new/k7325t_ddr3_1066_golden.xdc
+set_property target_constrs_file G:/Xilinx_K7_325t/k7325t_ddr3_1066_golden/k7325t_ddr3_1066_golden.srcs/constrs_1/new/k7325t_ddr3_1066_golden.xdc [current_fileset -constrset]
+update_compile_order -fileset sources_1
+archive_project G:/Xilinx_K7_325t/k7325t_ddr3_1066_golden.xpr.zip -temp_dir C:/Users/briansuneZ/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-14304-DESKTOP-4UKJC18 -force -exclude_run_results

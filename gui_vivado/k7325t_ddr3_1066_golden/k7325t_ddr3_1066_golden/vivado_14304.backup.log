@@ -1,0 +1,113 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Tue Sep  8 20:10:40 2020
+# Process ID: 14304
+# Current directory: C:/Users/briansuneZ/AppData/Roaming/Xilinx/Vivado
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent7620
+# Log file: C:/Users/briansuneZ/AppData/Roaming/Xilinx/Vivado/vivado.log
+# Journal file: C:/Users/briansuneZ/AppData/Roaming/Xilinx/Vivado\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project G:/Xilinx_K7_325t/k7325t_ddr3_1600_golden/k7325t_ddr3_1600_golden.xpr
+CRITICAL WARNING: [Project 1-19] Could not find the file 'G:/Xilinx_K7_325t/k7325t_ddr3_1600_golden/k7325t_ddr3_1600_golden.srcs/sources_1/user/top.v'.
+CRITICAL WARNING: [Project 1-19] Could not find the file 'G:/Xilinx_K7_325t/k7325t_ddr3_1600_golden/k7325t_ddr3_1600_golden.srcs/constrs_1/new/k7325t_ddr3.xdc'.
+Scanning sources...
+Finished scanning sources
+WARNING: [Project 1-509] GeneratedRun file for 'synth_1' not found
+WARNING: [Project 1-509] GeneratedRun file for 'ddr_synth_1' not found
+WARNING: [Project 1-509] GeneratedRun file for 'impl_1' not found
+WARNING: [filemgmt 56-3] IPUserFilesDir: Could not find the directory 'G:/Xilinx_K7_325t/k7325t_ddr3_1600_golden/k7325t_ddr3_1600_golden.ip_user_files'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/xilinx/Vivado/2018.2/data/ip'.
+open_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:05 . Memory (MB): peak = 988.375 ; gain = 229.461
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files G:/Xilinx_K7_325t/k7325t_ddr3_1600_golden/k7325t_ddr3_1600_golden.srcs/constrs_1/new/k7325t_ddr3.xdc] -no_script -reset -force -quiet
+remove_files  -fileset constrs_1 G:/Xilinx_K7_325t/k7325t_ddr3_1600_golden/k7325t_ddr3_1600_golden.srcs/constrs_1/new/k7325t_ddr3.xdc
+update_compile_order -fileset sources_1
+add_files -fileset constrs_1 -norecurse G:/Xilinx_K7_325t/k7325t_ddr3_1600_golden/k7325t_ddr3_1600_golden.srcs/constrs_1/new/k7325t_ddr3_1600_golden.xdc
+set_property target_constrs_file G:/Xilinx_K7_325t/k7325t_ddr3_1600_golden/k7325t_ddr3_1600_golden.srcs/constrs_1/new/k7325t_ddr3_1600_golden.xdc [current_fileset -constrset]
+export_ip_user_files -of_objects  [get_files G:/Xilinx_K7_325t/k7325t_ddr3_1600_golden/k7325t_ddr3_1600_golden.srcs/sources_1/user/top.v] -no_script -reset -force -quiet
+remove_files  G:/Xilinx_K7_325t/k7325t_ddr3_1600_golden/k7325t_ddr3_1600_golden.srcs/sources_1/user/top.v
+add_files -norecurse G:/Xilinx_K7_325t/k7325t_ddr3_1600_golden/k7325t_ddr3_1600_golden.srcs/sources_1/user/k7325t_ddr3_1600_golden.v
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+archive_project G:/Xilinx_K7_325t/k7325t_ddr3_1600_golden.xpr.zip -temp_dir C:/Users/briansuneZ/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-14304-DESKTOP-4UKJC18 -force -exclude_run_results
+INFO: [Coretcl 2-137] starting archive...
+INFO: [Coretcl 2-1499] Saving project copy to temporary location 'C:/Users/briansuneZ/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-14304-DESKTOP-4UKJC18' for archiving project
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/xilinx/Vivado/2018.2/data/ip'.
+INFO: [Coretcl 2-1211] Creating project copy for archival...
+INFO: [ProjectBase 1-495] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience any problem with archiving the project, please consider setting environment variable $TEMP to a shorter path.
+Current project path is 'C:/Users/briansuneZ/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-14304-DESKTOP-4UKJC18/PrjAr/_X_'.
+INFO: [Coretcl 2-135] resetting runs for excluding generated files from archive...
+INFO: [Coretcl 2-133] re-setting run 'synth_1'...
+INFO: [Coretcl 2-133] re-setting run 'ddr_synth_1'...
+INFO: [Coretcl 2-133] re-setting run 'impl_1'...
+INFO: [Coretcl 2-133] re-setting run 'ddr_impl_1'...
+INFO: [Coretcl 2-1209] Adding archive summary file to the project...
+INFO: [Coretcl 2-1214] Preparing project files for archive...
+INFO: [Coretcl 2-1210] Compressing project files and data...
+INFO: [Coretcl 2-1215] Project archived (G:/Xilinx_K7_325t/k7325t_ddr3_1600_golden.xpr.zip)
+INFO: [Coretcl 2-1216] To view the archive summary log in GUI, double click on 'Design Sources->Text->archive_project_summary.txt', or open this file from the archived project directory.
+archive_project: Time (s): cpu = 00:00:04 ; elapsed = 00:00:08 . Memory (MB): peak = 1005.426 ; gain = 16.816
+close_project
+open_project G:/Xilinx_K7_325t/k7325t_ddr3_1066_golden/k7325t_ddr3_1066_golden.xpr
+CRITICAL WARNING: [Project 1-19] Could not find the file 'G:/Xilinx_K7_325t/k7325t_ddr3_1066_golden/k7325t_ddr3_1066_golden.srcs/sources_1/user/top.v'.
+CRITICAL WARNING: [Project 1-19] Could not find the file 'G:/Xilinx_K7_325t/k7325t_ddr3_1066_golden/k7325t_ddr3_1066_golden.srcs/constrs_1/new/k7325t_ddr3.xdc'.
+Scanning sources...
+Finished scanning sources
+WARNING: [Project 1-509] GeneratedRun file for 'synth_1' not found
+WARNING: [Project 1-509] GeneratedRun file for 'ddr_synth_1' not found
+WARNING: [Project 1-509] GeneratedRun file for 'ddr_pll_synth_1' not found
+WARNING: [Project 1-509] GeneratedRun file for 'ddr_se_synth_1' not found
+WARNING: [Project 1-509] GeneratedRun file for 'impl_1' not found
+WARNING: [filemgmt 56-3] IP Output Repository Path: Could not find the directory 'G:/Xilinx_K7_325t/k7325t_ddr3_golden/k7325t_ddr3/k7325t_ddr3.cache/ip'.
+WARNING: [filemgmt 56-3] IPUserFilesDir: Could not find the directory 'G:/Xilinx_K7_325t/k7325t_ddr3_1066_golden/k7325t_ddr3_1066_golden.ip_user_files'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/xilinx/Vivado/2018.2/data/ip'.
+open_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1005.426 ; gain = 0.000
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files G:/Xilinx_K7_325t/k7325t_ddr3_1066_golden/k7325t_ddr3_1066_golden.srcs/sources_1/ip/ddr_pll/ddr_pll.xci] -no_script -reset -force -quiet
+remove_files  -fileset ddr_pll G:/Xilinx_K7_325t/k7325t_ddr3_1066_golden/k7325t_ddr3_1066_golden.srcs/sources_1/ip/ddr_pll/ddr_pll.xci
+INFO: [Project 1-386] Moving file 'G:/Xilinx_K7_325t/k7325t_ddr3_1066_golden/k7325t_ddr3_1066_golden.srcs/sources_1/ip/ddr_pll/ddr_pll.xci' from fileset 'ddr_pll' to fileset 'sources_1'.
+file delete -force G:/Xilinx_K7_325t/k7325t_ddr3_1066_golden/k7325t_ddr3_1066_golden.srcs/sources_1/ip/ddr_pll
+export_ip_user_files -of_objects  [get_files G:/Xilinx_K7_325t/k7325t_ddr3_1066_golden/k7325t_ddr3_1066_golden.srcs/sources_1/ip/ddr_se/ddr_se.xci] -no_script -reset -force -quiet
+remove_files  -fileset ddr_se G:/Xilinx_K7_325t/k7325t_ddr3_1066_golden/k7325t_ddr3_1066_golden.srcs/sources_1/ip/ddr_se/ddr_se.xci
+INFO: [Project 1-386] Moving file 'G:/Xilinx_K7_325t/k7325t_ddr3_1066_golden/k7325t_ddr3_1066_golden.srcs/sources_1/ip/ddr_se/ddr_se.xci' from fileset 'ddr_se' to fileset 'sources_1'.
+file delete -force G:/Xilinx_K7_325t/k7325t_ddr3_1066_golden/k7325t_ddr3_1066_golden.srcs/sources_1/ip/ddr_se
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files G:/Xilinx_K7_325t/k7325t_ddr3_1066_golden/k7325t_ddr3_1066_golden.srcs/constrs_1/new/k7325t_ddr3.xdc] -no_script -reset -force -quiet
+remove_files  -fileset constrs_1 G:/Xilinx_K7_325t/k7325t_ddr3_1066_golden/k7325t_ddr3_1066_golden.srcs/constrs_1/new/k7325t_ddr3.xdc
+export_ip_user_files -of_objects  [get_files G:/Xilinx_K7_325t/k7325t_ddr3_1066_golden/k7325t_ddr3_1066_golden.srcs/sources_1/ip/ddr_se/mig_b.prj] -no_script -reset -force -quiet
+remove_files  G:/Xilinx_K7_325t/k7325t_ddr3_1066_golden/k7325t_ddr3_1066_golden.srcs/sources_1/ip/ddr_se/mig_b.prj
+export_ip_user_files -of_objects  [get_files G:/Xilinx_K7_325t/k7325t_ddr3_1066_golden/k7325t_ddr3_1066_golden.srcs/sources_1/user/top.v] -no_script -reset -force -quiet
+remove_files  G:/Xilinx_K7_325t/k7325t_ddr3_1066_golden/k7325t_ddr3_1066_golden.srcs/sources_1/user/top.v
+add_files -norecurse G:/Xilinx_K7_325t/k7325t_ddr3_1066_golden/k7325t_ddr3_1066_golden.srcs/sources_1/user/k7325t_ddr3_1066_golden.v
+update_compile_order -fileset sources_1
+add_files -fileset constrs_1 -norecurse G:/Xilinx_K7_325t/k7325t_ddr3_1066_golden/k7325t_ddr3_1066_golden.srcs/constrs_1/new/k7325t_ddr3_1066_golden.xdc
+set_property target_constrs_file G:/Xilinx_K7_325t/k7325t_ddr3_1066_golden/k7325t_ddr3_1066_golden.srcs/constrs_1/new/k7325t_ddr3_1066_golden.xdc [current_fileset -constrset]
+update_compile_order -fileset sources_1
+archive_project G:/Xilinx_K7_325t/k7325t_ddr3_1066_golden.xpr.zip -temp_dir C:/Users/briansuneZ/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-14304-DESKTOP-4UKJC18 -force -exclude_run_results
+INFO: [Coretcl 2-137] starting archive...
+INFO: [Coretcl 2-1499] Saving project copy to temporary location 'C:/Users/briansuneZ/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-14304-DESKTOP-4UKJC18' for archiving project
+Scanning sources...
+Finished scanning sources
+WARNING: [filemgmt 56-3] IP Output Repository Path: Could not find the directory 'G:/Xilinx_K7_325t/k7325t_ddr3_golden/k7325t_ddr3/k7325t_ddr3.cache/ip'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/xilinx/Vivado/2018.2/data/ip'.
+INFO: [Coretcl 2-1211] Creating project copy for archival...
+INFO: [ProjectBase 1-495] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience any problem with archiving the project, please consider setting environment variable $TEMP to a shorter path.
+Current project path is 'C:/Users/briansuneZ/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-14304-DESKTOP-4UKJC18/PrjAr/_X_'.
+INFO: [Coretcl 2-135] resetting runs for excluding generated files from archive...
+INFO: [Coretcl 2-133] re-setting run 'synth_1'...
+INFO: [Coretcl 2-133] re-setting run 'ddr_synth_1'...
+INFO: [Coretcl 2-133] re-setting run 'impl_1'...
+INFO: [Coretcl 2-133] re-setting run 'ddr_impl_1'...

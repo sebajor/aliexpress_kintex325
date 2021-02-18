@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Fri Sep 11 07:22:21 2020
+# Process ID: 8360
+# Current directory: F:/K325667/kintex7_2020_dev_board-master/kintex7_2020_dev_board-master/k7325t_ddr3_1066_golden/k7325t_ddr3_1066_golden/k7325t_ddr3_1066_golden.runs/impl_1
+# Command line: vivado.exe -log k7325t_ddr3_1066_golden.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source k7325t_ddr3_1066_golden.tcl -notrace
+# Log file: F:/K325667/kintex7_2020_dev_board-master/kintex7_2020_dev_board-master/k7325t_ddr3_1066_golden/k7325t_ddr3_1066_golden/k7325t_ddr3_1066_golden.runs/impl_1/k7325t_ddr3_1066_golden.vdi
+# Journal file: F:/K325667/kintex7_2020_dev_board-master/kintex7_2020_dev_board-master/k7325t_ddr3_1066_golden/k7325t_ddr3_1066_golden/k7325t_ddr3_1066_golden.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source k7325t_ddr3_1066_golden.tcl -notrace

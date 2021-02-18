@@ -38,7 +38,7 @@ always@(posedge clk_100mhz)begin
 end
 
 
-assign leds = {leds_val, btn2};
+assign leds = {~leds_val, btn2};
 
 
 

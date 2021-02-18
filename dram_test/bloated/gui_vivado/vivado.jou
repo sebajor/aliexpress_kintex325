@@ -1,0 +1,42 @@
+#-----------------------------------------------------------
+# Vivado v2019.1.1 (64-bit)
+# SW Build 2580384 on Sat Jun 29 08:04:45 MDT 2019
+# IP Build 2579722 on Sat Jun 29 11:35:40 MDT 2019
+# Start of session at: Tue Feb 16 13:12:10 2021
+# Process ID: 5860
+# Current directory: /home/seba/Workspace/aliexpress_kintex325/dram_test/bloated/gui_vivado
+# Command line: vivado
+# Log file: /home/seba/Workspace/aliexpress_kintex325/dram_test/bloated/gui_vivado/vivado.log
+# Journal file: /home/seba/Workspace/aliexpress_kintex325/dram_test/bloated/gui_vivado/vivado.jou
+#-----------------------------------------------------------
+start_gui
+create_project dram_test /home/seba/Workspace/aliexpress_kintex325/dram_test/bloated/gui_vivado/dram_test -part xc7k325tffg676-2
+set_property  ip_repo_paths  /home/seba/Workspace/vivado/zynq/cores [current_project]
+update_ip_catalog
+add_files -fileset constrs_1 -norecurse /home/seba/Workspace/aliexpress_kintex325/dram_test/bloated/gui_vivado/fpga.xdc
+import_files -fileset constrs_1 /home/seba/Workspace/aliexpress_kintex325/dram_test/bloated/gui_vivado/fpga.xdc
+create_bd_design "design_1"
+update_compile_order -fileset sources_1
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:microblaze:11.0 microblaze_0
+endgroup
+set_property -dict [list CONFIG.C_D_AXI {1} CONFIG.C_I_AXI {1}] [get_bd_cells microblaze_0]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:microblaze_mcs:3.0 microblaze_mcs_0
+endgroup
+delete_bd_objs [get_bd_cells microblaze_mcs_0]
+startgroup
+apply_bd_automation -rule xilinx.com:bd_rule:microblaze -config { axi_intc {0} axi_periph {Enabled} cache {None} clk {New External Port (100 MHz)} debug_module {Debug Only} ecc {None} local_mem {8KB} preset {None}}  [get_bd_cells microblaze_0]
+endgroup
+set_property location {-215 -6} [get_bd_ports Clk]
+set_property location {2 533 339} [get_bd_cells rst_Clk_100M]
+set_property location {1 140 363} [get_bd_cells mdm_1]
+set_property location {2 588 -120} [get_bd_cells microblaze_0_local_memory]
+set_property location {1 159 144} [get_bd_cells microblaze_0]
+apply_bd_automation -rule xilinx.com:bd_rule:board -config { Manual_Source {Auto}}  [get_bd_pins rst_Clk_100M/ext_reset_in]
+set_property location {-183 -106} [get_bd_ports Clk]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:mig_7series:4.2 mig_7series_0
+endgroup
+delete_bd_objs [get_bd_cells mig_7series_0]
+save_bd_design
