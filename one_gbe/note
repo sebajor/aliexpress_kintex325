@@ -1,0 +1,12 @@
+https://community.intel.com/t5/FPGA-Wiki/Marvell-88E1111-PHY-Configuration-Steps/ta-p/735410
+https://www.marvell.com/content/dam/marvell/en/public-collateral/transceivers/marvell-phys-transceivers-alaska-88e1111-datasheet.pdf
+(out phy support 10/100/1000Base-T, the datasheet say that it has a 1.25GHz serdes to use with 1000BASE-X
+it also support rgmii)
+
+https://fraserinnovations.com/fpga-tutor/fpga-beginner-tutorial-ethernet-experiment-fpga-board-for-beginner-experiment-11/
+
+
+
+
+arty ex:(use a mii)
+https://github.com/hamsternz/ArtyEtherentTX/tree/master/hdl
