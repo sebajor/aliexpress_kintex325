@@ -11,11 +11,11 @@ To build the projects you need to add to the vivado to the PATH
 - [ ] Complete the xdc file
 - [ ] Board files
 - [x] Automatic building using vivado in batch mode
-- [ ] Recheck the uart cores--> the loopback freeze sometimes (I havent look that behaviour in other boards, but is likely to be buggy)
+- [x] Recheck the uart cores--> the loopback freeze sometimes (I havent look that behaviour in other boards, but is likely to be buggy)
 - [ ] DRAM model
 - [ ] Gbe model
 - [ ] 10Gbe model
-- [ ] HDMI model 
+- [x] HDMI model 
 - [ ] SATA model
 - [ ] PCIe model
 - [ ] HPC LPC model test

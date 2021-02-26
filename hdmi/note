@@ -1,3 +1,6 @@
+Notes taken from reading the hdmi 1.3a specifications
+#######################################################
+
 DDC:
     SDA, SCL, DDC: I2C
 HPD: Hot plug detect 
