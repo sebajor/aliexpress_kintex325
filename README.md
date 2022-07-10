@@ -11,11 +11,20 @@ To build the projects you need to add to the vivado to the PATH
 - [ ] Complete the xdc file
 - [ ] Board files
 - [x] Automatic building using vivado in batch mode
-- [x] Recheck the uart cores--> the loopback freeze sometimes (I havent look that behaviour in other boards, but is likely to be buggy)
+- [x] Recheck the uart cores
 - [ ] DRAM model
-- [ ] Gbe model
+- [x] Gbe model
 - [ ] 10Gbe model
 - [x] HDMI model 
 - [ ] SATA model
 - [ ] PCIe model
 - [ ] HPC LPC model test
+
+
+
+
+##NOTES:
+- The gmii_a txclk is placed in E12, and the gmii_b txclk is placed in C9,
+ which are non-clock capable pin. So I think it only could work a 1000mbps.
+
+

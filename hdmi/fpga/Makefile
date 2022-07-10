@@ -6,9 +6,10 @@ FPGA_ARCH = kintex7
 
 #files for synthesis
 SYN_FILES = rtl/fpga.v
-SYN_FILES += hdmi_util/hdmi.sv 
-SYN_FILES += hdmi_util/serializer.sv
-SYN_FILES += hdmi_util/tmds_channel.sv
+SYN_FILES += rtl/hdmi_phy_intf.v
+SYN_FILES += rtl/tmds_encoder.v
+SYN_FILES += rtl/dvi.v
+#SYN_FILES += rtl/hdmi.sv
 
 
 #XDC files

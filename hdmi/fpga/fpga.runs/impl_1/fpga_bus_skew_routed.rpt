@@ -1,0 +1,15 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1.1 (lin64) Build 2580384 Sat Jun 29 08:04:45 MDT 2019
+| Date         : Fri Aug  6 23:02:15 2021
+| Host         : seba-HP-ProBook-450-G6 running 64-bit Ubuntu 18.04.5 LTS
+| Command      : report_bus_skew -warn_on_violation -file fpga_bus_skew_routed.rpt -pb fpga_bus_skew_routed.pb -rpx fpga_bus_skew_routed.rpx
+| Design       : fpga
+| Device       : 7k325t-ffg676
+| Speed File   : -2  PRODUCTION 1.12 2017-02-17
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Bus Skew Report
+
+No bus skew constraints
+

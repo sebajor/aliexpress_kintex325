@@ -1,0 +1,173 @@
+Notes taken from reading the hdmi 1.3a specifications
+#######################################################
+
+DDC:
+    SDA, SCL, DDC: I2C
+HPD: Hot plug detect 
+
+
+Signalings:
+
+TMDS: Are 4 channels of 14 bits
+
+channel0:   8 bits pixel component
+            2 bits H, vsync
+            4 bits aux data (pkt header)
+
+channel1:   8 bits pixel component
+            2 bits CTL0, CTL1
+            4 bits aux data (audio sample)
+
+channel2:   8 bits pixel component
+            2 bits CTL2, CTL3
+            4 bits aux data (audio sample)
+
+clock channel
+
+
+Operating modes: 
+
+-video data : transmit data, 8 bits per chan ie 24 bits encoded in tmds
+             (tmds encode 8->10)
+
+-data island : transmit audio and aux data encoded in tmds
+                reduction code (TERC4), 4 bits per chan ie 12
+                (TERC4 encode 4->10)
+
+-control : no video y no audio, 2 bits per chan, 
+           HSYNC, VSYNC, CTLx (0,1,2,3)
+
+previous every video or data there ia a preamble where the CTLx
+indicates what is the next frame.
+
+Also every data period and data island starts with a trailling guard
+
+-------------------------------------------------------------------------------
+
+CONTROL PERIOD
+
+-Preamble:
+ctl0,ctl1,clt2,ctl3:
+
+1000-> video data period
+1010-> data island period
+
+-Character sync:
+during the control period the tmds channels have 7 or more transitions
+this is the way to achieve the sync between the devices
+
+
+VIDEO DATA PERIOD:
+
+-video guard: 
+The video period is preceded by the preamble  and then you have
+two video leading guard (there is no trailing guard for the video)
+case (TMDS_Channel Number):
+    0:q_out[9:0] = 0b1011001100;
+    1:q_out[9:0] = 0b0100110011;
+    2:q_out[9:0] = 0b1011001100;
+endcase
+
+DATA ISLAND:
+preceded by a preamble, then the first pkt is a leading guard.
+
+In the data island the bits 0 and 1 of the TMDS channel transmit
+encoded forms of hsync and vsync
+
+
+bit2 of chan0 transmit the pkt header. The remaining TMDS 4 bits of
+chan2 and chan3 transmit the packet data.
+
+After the last packet we have the trailing guard.
+
+###
+
+##while transmitting a video at least one data island shall be transmitted
+##during two videos field.
+
+###
+-data island guard:
+the last two data chars are trailing guards.
+Depending on the values of the HSYNC and VSYNC the chan0 takes the
+values 0xc 0xd 0xe 0xf.
+case (TMDSChannel Number):
+    0:q_out[9:0] = n.a.;
+    1:q_out[9:0] = 0b0100110011;
+    2:q_out[9:0] = 0b0100110011;
+endcase
+
+######
+
+
+#####
+TERC4:
+case (D3, D2, D1, D0):
+0000: q_out[9:0] =0b1010011100;
+0001: q_out[9:0] =0b1001100011;
+0010: q_out[9:0] =0b1011100100;
+0011: q_out[9:0] =0b1011100010;
+0100: q_out[9:0] =0b0101110001;
+0101: q_out[9:0] =0b0100011110;
+0110: q_out[9:0] =0b0110001110;
+0111: q_out[9:0] =0b0100111100;
+1000: q_out[9:0] =0b1011001100;
+1001: q_out[9:0] =0b0100111001;
+1010: q_out[9:0] =0b0110011100;
+1011: q_out[9:0] =0b1011000110;
+1100: q_out[9:0] =0b1010001110;
+1101: q_out[9:0] =0b1001110001;
+1110: q_out[9:0] =0b0101100011;
+1111: q_out[9:0] =0b1011000011;
+endcase;
+
+
+##################################################
+
+Video data encoding:
+The encoding is divided in two. first we present 8 bits who are
+translated to 9 to mantain the DC balance and the second part produce the 10 bits
+
+The first stage takes care of the transitions in the 8 bits and add one 
+bit flag to show which encode type was used (xnor or xor)
+
+The lsb is the same, the next one is the xor(nxor) of the previous bits.
+
+The 2nd stage creates some sort of DC balance inverting the 8 bits
+of the previous stage, a 10 bit is added to show if the inversion was performed.
+To determine when to invert the signal first if the previous word has more
+1 than 0, and the next word also has more 1 then it gets inverted.
+
+###########################################################
+
+VIDEO:
+video control signals:
+during data island HSYNC and VSYNC are transmitted encoding on channel 0.
+in the control data the hsync and vsync are send using the 4 control chars in the chan0.
+during video data hdmi doesnt send hsync and vsync
+
+
+pixel encoding:
+RGB:444, YC_bC_r:4:2:2 and YC_bC_r:4:4:4
+
+
+###timming info:
+each preamble is 8 tmds clock, each data island is 32 tmds clks,
+each guard band is 2tmds
+
+  
+
+
+########################
+The receiver is required to sync with the data stream during any blank period
+greater than 128 chars.
+
+
+
+
+
+
+
+
+
+
+    

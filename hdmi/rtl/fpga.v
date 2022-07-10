@@ -1,5 +1,3 @@
-`default_nettype none
-
 
 module fpga #(
     parameter VIDEO_ID_CODE=4
@@ -136,81 +134,47 @@ assign xor_pattern = cx ^cy;
 always@(posedge clk_pixel)begin
     rgb <= {3{xor_pattern}};
 end
-
-
-hdmi #(.VIDEO_ID_CODE(4), .DVI_OUTPUT(1)) 
-hdmi_inst(
-  .clk_pixel_x5(clk_pixel_x5),
-  .clk_pixel(clk_pixel),
-  .clk_audio(),
-  .rgb(rgb),
-  .audio_sample_word(),
-  .tmds(tmds),
-  .tmds_clock(tmds_clock),
-  .cx(cx),
-  .cy(cy),
-  .screen_start_x(screen_start_x),
-  .screen_start_y(screen_start_y),
-  .frame_width(frame_width),
-  .frame_height(frame_height),
-  .screen_width(screen_width),
-  .screen_height(screen_height)
+/*
+hdmi 
+#(
+    .VIDEO_ID_CODE(4),
+    .DVI_OUTPUT(1'b1)
+)hdmi_inst
+(
+    .clk_pixel_x5(clk_pixel_x5),
+    .clk_pixel(clk_pixel),
+    .clk_audio(),
+    .rgb(rgb),
+    .audio_sample_word(),
+    .phy_tmds({hdmi_d2, hdmi_d1, hdmi_d0}),
+    .phy_tmds_clock(hdmi_clk),
+    .cx(cx),
+    .cy(cy),
+    .frame_width(frame_width),
+    .frame_height(frame_height),
+    .screen_width(screen_width),
+    .screen_height(screen_height),
+    .screen_start_x(screen_start_x),
+    .screen_start_y(screen_start_y)
 );
 
-//output the data
+*/ 
 
-OBUFDS #(
-    .IOSTANDARD	("DEFAULT"),
-    .SLEW		("FAST")
-)OBUFDS_hdmi_d0(
-    .I		(tmds[0]),
-    .O		(hdmi_d0[1]),
-    .OB		(hdmi_d0[0])
+dvi #(
+    .VIDEO_ID_CODE(4)
+) dvi_inst (
+    .pxl_clk(clk_pixel),
+    .pxl_clk_x5(clk_pixel_x5),
+    .rgb(rgb),
+    .phy_tmds_lanes({hdmi_d2, hdmi_d1, hdmi_d0}),
+    .phy_tmds_clk(hdmi_clk),
+    .cx(cx),
+    .cy(cy),
+    .frame_width(frame_width),
+    .frame_height(frame_height),
+    .screen_width(screen_width),
+    .screen_height(screen_height),
+    .screen_start_x(screen_start_x),
+    .screen_start_y(screen_start_y)
 );
-
-OBUFDS #(
-    .IOSTANDARD	("DEFAULT"),
-    .SLEW		("FAST")
-)OBUFDS_hdmi_d1(
-    .I		(tmds[1]),
-    .O		(hdmi_d1[1]),
-    .OB		(hdmi_d1[0])
-);
-
-OBUFDS #(
-    .IOSTANDARD	("DEFAULT"),
-    .SLEW		("FAST")
-)OBUFDS_hdmi_d2(
-    .I		(tmds[2]),
-    .O		(hdmi_d2[1]),
-    .OB		(hdmi_d2[0])
-);
-
-
-wire tmds_clock_oddr;
-ODDR #(
-    .DDR_CLK_EDGE("OPPOSITE_EDGE"),
-    .INIT(1'b0),
-    .SRTYPE("SYNC")
-) ODDR_inst (
-    .Q	(tmds_clock_oddr),
-    .C	(tmds_clock),
-    .CE	(1),
-    .D1	(1),
-    .D2	(0),
-    .R	(0),
-    .S	(0)
-);
-	
-
-OBUFDS #(
-    .IOSTANDARD	("DEFAULT"),
-    .SLEW		("FAST")
-)OBUFDS_hdmi_clk(
-    .I		(tmds_clock_oddr),
-    .O		(hdmi_clk[1]),
-    .OB		(hdmi_clk[0])
-);
-
-
 endmodule
