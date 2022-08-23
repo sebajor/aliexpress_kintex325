@@ -3,3 +3,7 @@
 *.pyc
 *.jou
 *.log
+*.xpr
+*.pdf
+dram/*
+*/fpga/*

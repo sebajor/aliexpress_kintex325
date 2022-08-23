@@ -9,9 +9,9 @@ To build the projects you need to add to the vivado to the PATH
 ## TODO
 
 - [ ] Complete the xdc file
-- [ ] Board files
 - [x] Automatic building using vivado in batch mode
-- [x] Recheck the uart cores
+- [x] UART-led basic test
+- [x] GPIOs
 - [ ] DRAM model
 - [x] Gbe model
 - [ ] 10Gbe model
